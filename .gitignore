@@ -1,0 +1,7 @@
+img/
+*.jpg
+*.jpeg
+*.png
+*.mp4
+node_modules/
+.vscode/
