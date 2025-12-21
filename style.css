@@ -367,4 +367,18 @@ footer {
   .bronze {
     grid-column: auto;
   }
+
+  /* ORDEM CORRETA DO PÓDIO NO MOBILE */
+.ouro {
+  order: 1;
+}
+
+.prata {
+  order: 2;
+}
+
+.bronze {
+  order: 3;
+}
+
 }
