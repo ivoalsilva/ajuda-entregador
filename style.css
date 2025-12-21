@@ -368,17 +368,26 @@ footer {
     grid-column: auto;
   }
 
-  /* ORDEM CORRETA DO PÓDIO NO MOBILE */
-.ouro {
-  order: 1;
-}
 
-.prata {
-  order: 2;
-}
+  /* PÓDIO – MOBILE (ORDEM CORRETA) */
 
-.bronze {
-  order: 3;
-}
+  .podio {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .ouro {
+    order: 1;
+  }
+
+  .prata {
+    order: 2;
+  }
+
+  .bronze {
+    order: 3;
+  }
+
 
 }
