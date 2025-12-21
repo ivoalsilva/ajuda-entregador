@@ -36,7 +36,7 @@ section {
   background: white;
   margin-top: 40px;
   border-radius: 18px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
 }
 
 #contribuicoes {
@@ -44,7 +44,7 @@ section {
   background: #fff7ef;
   padding: 30px;
   border-radius: 18px;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
   border-left: 6px solid #ff7a18;
 }
 
@@ -111,7 +111,7 @@ h2 {
 
 .foto-box:hover {
   transform: scale(1.02);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 /* CONTADOR */
@@ -192,57 +192,6 @@ footer {
 }
 
 
-/* Responsividade para celulares */
-@media (max-width: 768px) {
-
-  header h1 {
-    font-size: 1.8rem;
-  }
-
-  header p {
-    font-size: 1rem;
-  }
-
-  section {
-    padding: 25px 15px;
-  }
-
-  .foto-box img,
-  .foto-box video {
-    width: 100% !important;
-    height: auto !important;
-  }
-
-  /* Imagens lado a lado viram coluna */
-  .foto-box {
-    flex-direction: column !important;
-    gap: 15px;
-  }
-
-  /* Botão PIX maior no celular */
-  .btn {
-    width: 100%;
-    text-align: center;
-    padding: 15px;
-    font-size: 1.1rem;
-  }
-
-  /* Barra de progresso */
-  .progresso-container {
-    height: 20px;
-  }
-
-  .percentual {
-    font-size: 1rem;
-  }
-
-  /* Lista de contribuições mais legível */
-  .historico li {
-    font-size: 1rem;
-  }
-}
-
-
 .galeria {
   display: flex;
   flex-wrap: wrap;
@@ -254,8 +203,168 @@ footer {
 .galeria img,
 .galeria video {
   max-width: 100%;
-  width: 280px;   /* largura ideal no celular */
+  width: 280px;
+  /* largura ideal no celular */
   height: auto;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+/* ===== PÓDIO (GRID FIXO – SEM QUEBRA) ===== */
+
+.podio {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin: 30px 0;
+  align-items: end;
+}
+
+.podio-item {
+  background: white;
+  border-radius: 16px;
+  padding: 20px 16px;
+  text-align: center;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.podio-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.18);
+}
+
+/* Medalhas */
+.medalha {
+  font-size: 2rem;
+}
+
+/* Texto */
+.podio-item strong {
+  display: block;
+  font-size: 1.2rem;
+  margin-top: 6px;
+}
+
+.podio-item p {
+  margin: 8px 0;
+  font-size: 1rem;
+  color: #555;
+}
+
+.valor {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+/* POSIÇÃO CORRETA DO PÓDIO */
+.ouro {
+  grid-column: 2;
+  border-top: 6px solid #ffb703;
+}
+
+.ouro .medalha {
+  font-size: 2.4rem;
+}
+
+.ouro .valor {
+  color: #ff7a18;
+}
+
+.prata {
+  grid-column: 1;
+  border-top: 6px solid #b0b0b0;
+}
+
+.prata .valor {
+  color: #777;
+}
+
+.bronze {
+  grid-column: 3;
+  border-top: 6px solid #cd7f32;
+}
+
+.bronze .valor {
+  color: #8b5a2b;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================
+   RESPONSIVO – MOBILE
+========================= */
+@media (max-width: 768px) {
+
+  /* HEADER */
+  header h1 {
+    font-size: 1.8rem;
+  }
+
+  header p {
+    font-size: 1rem;
+  }
+
+  /* SEÇÕES */
+  section {
+    padding: 25px 15px;
+  }
+
+  /* IMAGENS E VÍDEOS */
+  .foto-box {
+    flex-direction: column;
+    gap: 15px;
+    height: auto;
+  }
+
+  .foto-box img,
+  .foto-box video,
+  .galeria img,
+  .galeria video {
+    width: 100%;
+    height: auto;
+  }
+
+  /* BOTÃO */
+  .btn {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.1rem;
+    text-align: center;
+  }
+
+  /* BARRA DE PROGRESSO */
+  .progresso-container {
+    height: 20px;
+  }
+
+  .percentual {
+    font-size: 1rem;
+  }
+
+  /* HISTÓRICO */
+  .historico li {
+    font-size: 1rem;
+  }
+
+  /* PÓDIO */
+  .podio {
+    grid-template-columns: 1fr;
+  }
+
+  .ouro,
+  .prata,
+  .bronze {
+    grid-column: auto;
+  }
 }
